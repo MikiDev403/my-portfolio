@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartStudy Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">✦</span> SmartStudy <span>Hub</span></div>
+    <button id="themeBtn" class="icon-btn">☀</button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">FUTURE OF SCHOOL</p>
+        <h1>Study smarter.<br><span>Achieve more.</span></h1>
+        <p class="hero-text">A modern student dashboard for goals, focus sessions, tasks and quick revision.</p>
+        <button class="primary" onclick="startFocus()">▶ Start Focus Session</button>
+      </div>
+      <div class="orbit">
+        <div class="planet">S</div>
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="dot d1"></div><div class="dot d2"></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><b id="tasksDone">0</b><small>Tasks Done</small></div>
+      <div class="stat"><b>7</b><small>Subjects</small></div>
+      <div class="stat"><b id="streak">1</b><small>Day Streak</small></div>
+      <div class="stat"><b id="focusMinutes">25</b><small>Focus Minutes</small></div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <div class="card-title"><h2>Today's Mission</h2><span>✓</span></div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <p id="progressText">0 of 4 missions completed</p>
+        <label class="task"><input type="checkbox" onchange="toggleTask(this)"> Review Mathematics</label>
+        <label class="task"><input type="checkbox" onchange="toggleTask(this)"> Read Science notes</label>
+        <label class="task"><input type="checkbox" onchange="toggleTask(this)"> Practice English</label>
+        <label class="task"><input type="checkbox" onchange="toggleTask(this)"> 15-minute coding practice</label>
+      </section>
+
+      <section class="card focus-card">
+        <div class="card-title"><h2>Focus Timer</h2><span>◉</span></div>
+        <div id="timer">25:00</div>
+        <p>Pomodoro study session</p>
+        <button class="primary" onclick="startFocus()">Start</button>
+        <button class="secondary" onclick="resetTimer()">Reset</button>
+      </section>
+
+      <section class="card">
+        <div class="card-title"><h2>Quick Revision</h2><span>⚡</span></div>
+        <div class="flashcard" onclick="flipCard()">
+          <small>QUESTION</small>
+          <h3 id="question">What does HTML stand for?</h3>
+          <p id="answer">Click the card to reveal the answer.</p>
+        </div>
+        <button class="secondary full" onclick="nextCard()">Next Question →</button>
+      </section>
+
+      <section class="card">
+        <div class="card-title"><h2>My Subjects</h2><span>◈</span></div>
+        <div class="subjects">
+          <div><b>Math</b><span>85%</span><i><em style="width:85%"></em></i></div>
+          <div><b>Science</b><span>78%</span><i><em style="width:78%"></em></i></div>
+          <div><b>English</b><span>91%</span><i><em style="width:91%"></em></i></div>
+          <div><b>Computer</b><span>96%</span><i><em style="width:96%"></em></i></div>
+        </div>
+      </section>
+    </div>
+
+    <section class="quote">
+      <div>“</div>
+      <p>Small progress every day becomes a big achievement.</p>
+      <span>— SmartStudy</span>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
